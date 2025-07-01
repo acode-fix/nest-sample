@@ -1,0 +1,29 @@
+// // src/database/seeders/option.seeder.ts
+// import { DataSource } from 'typeorm';
+// import { Seeder, SeederFactoryManager } from 'typeorm-extension';
+// import { Option } from 'src/entities/option.entity';
+// import { Question } from 'src/entities/question.entity';
+// import { faker } from '@faker-js/faker';
+
+// export default class OptionSeeder implements Seeder {
+//   async run(dataSource: DataSource): Promise<void> {
+//     const optionRepository = dataSource.getRepository(Option);
+//     const questionRepository = dataSource.getRepository(Question);
+
+//     // Fetch all questions from the database to assign options
+//     const questions = await questionRepository.find();
+
+//     for (const question of questions) {
+//       // Create 4 fake options for each question
+//       const correctAnswerIndex = Math.floor(Math.random() * 4);
+//       for (let i = 0; i < 4; i++) {
+//         const option = optionRepository.create({
+//             text: faker.lorem.words(10), // Generate fake text for option
+//             isCorrect:  true,
+//             question,
+//         });
+//         await optionRepository.save(option);
+//       }
+//     }
+//   }
+// }

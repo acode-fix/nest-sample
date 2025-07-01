@@ -1,0 +1,28 @@
+// // src/database/seeders/question.seeder.ts
+// import { DataSource } from 'typeorm';
+// import { Seeder, SeederFactoryManager } from 'typeorm-extension';
+// import { Question } from 'src/entities/question.entity';
+// import { Quiz } from 'src/entities/quiz.entity';
+// import { faker } from '@faker-js/faker';
+
+// export default class QuestionSeeder implements Seeder {
+//   async run(dataSource: DataSource, factoryManager: SeederFactoryManager): Promise<void> {
+//     const questionRepository = dataSource.getRepository(Question);
+//     const quizRepository = dataSource.getRepository(Quiz);
+
+//     // Fetch quizzes from database to assign questions to them
+//     const quizzes = await quizRepository.find();
+//       console.log('quiz data'+quizzes)
+
+//     // Create 10 fake questions for each quiz
+//     for (const quiz of quizzes) {
+//       for (let i = 0; i < 5; i++) {
+//         const question = questionRepository.create({
+//           question: faker.lorem.sentence(),
+//           quiz,
+//         });
+//         await questionRepository.save(question);
+//       }
+//     }
+//   }
+// }
